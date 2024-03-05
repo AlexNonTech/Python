@@ -2,43 +2,52 @@ import random
 
 choices = ['rock', 'paper', 'scissors']
 
-computer = random.choice(choices)
-player = None
+while True:
 
-while player not in choices:
-    player = input("rock, paper, or scissors?: ").lower()
+    computer = random.choice(choices)
+    player = None
 
-if player == computer:
-    print("computer: " + computer)
-    print("player: " + player)
-    print("Tie!")
+    while player not in choices:
+        player = input("rock, paper, or scissors?: ").lower()
 
-elif player == 'rock':
-    if computer == 'paper':
+    if player == computer:
         print("computer: " + computer)
         print("player: " + player)
-        print("You lose!")
-    if computer == 'scissors':
-        print("computer: " + computer)
-        print("player: " + player)
-        print("You win!")
+        print("Tie!")
 
-elif player == 'paper':
-    if computer == 'rock':
-        print("computer: " + computer)
-        print("player: " + player)
-        print("You win!")
-    if computer == 'scissors':
-        print("computer: " + computer)
-        print("player: " + player)
-        print("You lose!")
+    elif player == 'rock':
+        if computer == 'paper':
+            print("computer: " + computer)
+            print("player: " + player)
+            print("You lose!")
+        if computer == 'scissors':
+            print("computer: " + computer)
+            print("player: " + player)
+            print("You win!")
 
-elif player == 'scissors':
-    if computer == 'paper':
-        print("computer: " + computer)
-        print("player: " + player)
-        print("You win!")
-    if computer == 'rock':
-        print("computer: " + computer)
-        print("player: " + player)
-        print("You lose!")
+    elif player == 'paper':
+        if computer == 'rock':
+            print("computer: " + computer)
+            print("player: " + player)
+            print("You win!")
+        if computer == 'scissors':
+            print("computer: " + computer)
+            print("player: " + player)
+            print("You lose!")
+
+    elif player == 'scissors':
+        if computer == 'paper':
+            print("computer: " + computer)
+            print("player: " + player)
+            print("You win!")
+        if computer == 'rock':
+            print("computer: " + computer)
+            print("player: " + player)
+            print("You lose!")
+
+    play_again = input("Want to play again? (yes/no): ").lower()
+
+    if play_again != 'yes':
+        break
+
+print("Bye!")
